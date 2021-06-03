@@ -7,12 +7,13 @@ for(var i=0;i<document.querySelectorAll(".drum").length;i++){
 function handleclick(){
     var buttonhtml=this.innerHTML;
     sound(buttonhtml);
-    
+    addanimation(buttonhtml);
 }
 document.addEventListener("keypress",keysound);
 
 function keysound(event){
     sound(event.key);
+    addanimation(event.key);
 }
 
 function sound(key) {
@@ -51,4 +52,9 @@ function sound(key) {
     }
     
 }
-
+function addanimation(currentkey){
+   var currkey= document.querySelector("."+currentkey);
+    currkey.classList.add("pressed");
+    settimeout( function(){
+        currkey.classList.remove("pressed")},100);
+}

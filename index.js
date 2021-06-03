@@ -55,6 +55,6 @@ function sound(key) {
 function addanimation(currentkey){
    var currkey= document.querySelector("."+currentkey);
     currkey.classList.add("pressed");
-    settimeout( function(){
-        currkey.classList.remove("pressed")},100);
+    setTimeout( function(){
+        currkey.classList.remove("pressed");},100);
 }
